@@ -1,7 +1,16 @@
 import { useRef } from 'react'
 
-const PreviewVideo = ({ game }) => {
-	const videoRef = useRef(null)
+interface Game {
+	thumbnail: string
+	video: string
+}
+
+interface PreviewVideoProps {
+	game: Game
+}
+
+const PreviewVideo = ({ game }: PreviewVideoProps) => {
+	const videoRef = useRef<HTMLVideoElement>(null)
 
 	const handleMouseEnter = () => {
 		if (videoRef.current) {

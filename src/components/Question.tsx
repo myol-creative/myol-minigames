@@ -6,7 +6,7 @@ interface QuestionProps {
 	answer: string
 }
 
-const Question: React.FC<QuestionProps> = ({ question, answer }) => {
+const Question = ({ question, answer }: QuestionProps) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	return (
