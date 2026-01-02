@@ -4,10 +4,10 @@ import VidPreview from './VidPreview'
 
 const allTags = [...new Set(games.flatMap((game) => game.tags))]
 
-export default function GamesContainer() {
+const FilterGames = () => {
 	const [filter, setFilter] = useState('All')
 
-	const handleFilterChange = (tag) => {
+	const handleFilterChange = (tag: string) => {
 		setFilter(tag)
 	}
 
@@ -52,7 +52,6 @@ export default function GamesContainer() {
 						className='bg-black-500 text-cream-500 rounded-sm overflow-hidden mx-auto border-2 border-cream-500 hover:border-yellow-500 hover-transition opacity-80 hover:opacity-100'
 					>
 						<a href={`/${game.id}`} className='inline-block'>
-							{/* <img src={game.thumbnail} alt={game.title} /> */}
 							<VidPreview game={game} />
 							<div className='px-2xs py-xs'>
 								<p className='space-x-3xs text-right'>
@@ -79,3 +78,4 @@ export default function GamesContainer() {
 		</div>
 	)
 }
+export default FilterGames
